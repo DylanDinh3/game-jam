@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxcmv44e3oi0c"]
+
+[ext_resource type="AudioStream" uid="uid://c0vttgl4hqsej" path="res://Menu Theme.wav" id="1_2qcsk"]
+[ext_resource type="Script" path="res://audio_tracker.gd" id="2_3r3a0"]
+
+[node name="AudioTracker" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_2qcsk")
+autoplay = true
+script = ExtResource("2_3r3a0")

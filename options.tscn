@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq181tpn46yi3"]
+
+[ext_resource type="Script" path="res://options.gd" id="1_72ih1"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_72ih1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+size_flags_horizontal = 4
+text = "Options"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 59.0
+offset_right = 67.0
+offset_bottom = 82.0
+size_flags_horizontal = 0
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+layout_mode = 2
+offset_left = 71.0
+offset_top = 59.0
+offset_right = 152.0
+offset_bottom = 80.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -32.0
+offset_right = 41.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+text = "Back"
+
+[connection signal="value_changed" from="VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

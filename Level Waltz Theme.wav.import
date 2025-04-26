@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckxmlyaqw35um"
+path="res://.godot/imported/Level Waltz Theme.wav-938f89d94a28c389d1ed8197e4098a9b.sample"
+
+[deps]
+
+source_file="res://Level Waltz Theme.wav"
+dest_files=["res://.godot/imported/Level Waltz Theme.wav-938f89d94a28c389d1ed8197e4098a9b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

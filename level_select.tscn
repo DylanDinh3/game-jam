@@ -1,0 +1,101 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba6oyiav808an"]
+
+[ext_resource type="Script" path="res://level_select.gd" id="1_fvh1v"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fvh1v")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 136.0
+offset_right = 53.0
+offset_bottom = 167.0
+scale = Vector2(0.5, 0.5)
+text = "Back"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 222.0
+offset_bottom = 120.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+columns = 5
+
+[node name="Level1Button" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "1"
+
+[node name="Level2Button" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+disabled = true
+text = "2"
+
+[node name="Level3Button" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+disabled = true
+text = "3"
+
+[node name="Level4Button" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+disabled = true
+text = "4"
+
+[node name="Level5Button" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+disabled = true
+text = "5"
+
+[node name="Level6Button" type="Button" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+disabled = true
+text = "6"
+
+[node name="Level7Button" type="Button" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+disabled = true
+text = "7"
+
+[node name="Level8Button" type="Button" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+disabled = true
+text = "8"
+
+[node name="Level9Button" type="Button" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+disabled = true
+text = "9"
+
+[node name="Level10Button" type="Button" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+disabled = true
+text = "10"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Level1Button" to="." method="_on_level_button_pressed" binds= [1]]
+[connection signal="pressed" from="MarginContainer/GridContainer/Level2Button" to="." method="_on_level_button_pressed" binds= [2]]
+[connection signal="pressed" from="MarginContainer/GridContainer/Level3Button" to="." method="_on_level_button_pressed" binds= [3]]
+[connection signal="pressed" from="MarginContainer/GridContainer/Level4Button" to="." method="_on_level_button_pressed" binds= [4]]
+[connection signal="pressed" from="MarginContainer/GridContainer/Level5Button" to="." method="_on_level_button_pressed" binds= [5]]
+[connection signal="pressed" from="MarginContainer/GridContainer/Level6Button" to="." method="_on_level_button_pressed" binds= [6]]
+[connection signal="pressed" from="MarginContainer/GridContainer/Level7Button" to="." method="_on_level_button_pressed" binds= [7]]
+[connection signal="pressed" from="MarginContainer/GridContainer/Level8Button" to="." method="_on_level_button_pressed" binds= [8]]
+[connection signal="pressed" from="MarginContainer/GridContainer/Level9Button" to="." method="_on_level_button_pressed" binds= [9]]
+[connection signal="pressed" from="MarginContainer/GridContainer/Level10Button" to="." method="_on_level_button_pressed" binds= [10]]

@@ -1,0 +1,224 @@
+[gd_scene load_steps=16 format=4 uid="uid://cgya4tnkcwt3b"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_34xwt"]
+[ext_resource type="Texture2D" uid="uid://bf5lqcmhcym74" path="res://Art/Tileset.png" id="2_50yy3"]
+[ext_resource type="Texture2D" uid="uid://cwh3aw1l8leg7" path="res://Art/FallGroundTileset.png" id="3_fi8hr"]
+[ext_resource type="Texture2D" uid="uid://c601c5ve3ep64" path="res://Art/Trees.png" id="4_2nisw"]
+[ext_resource type="PackedScene" uid="uid://dx7m3vt4ucaps" path="res://player.tscn" id="5_qa8ae"]
+[ext_resource type="PackedScene" uid="uid://bnj2bial2j2ly" path="res://tortoise.tscn" id="6_g15r5"]
+[ext_resource type="PackedScene" uid="uid://yo85lb556e0c" path="res://apple.tscn" id="7_rlyom"]
+[ext_resource type="PackedScene" uid="uid://bnkp5t6srbs57" path="res://textbox.tscn" id="8_agqym"]
+[ext_resource type="PackedScene" uid="uid://b03sxa6hccx8b" path="res://pause_menu.tscn" id="9_0djq5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ob0h"]
+texture = ExtResource("2_50yy3")
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+0:1/0/custom_data_1 = true
+1:1/0 = 0
+1:1/0/custom_data_0 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vipx"]
+texture = ExtResource("3_fi8hr")
+3:0/0 = 0
+3:0/0/custom_data_0 = true
+4:1/0 = 0
+4:1/0/custom_data_0 = true
+4:1/0/custom_data_1 = true
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+1:6/0/custom_data_0 = true
+2:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+7:4/0 = 0
+6:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+7:5/0 = 0
+7:6/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2lkg"]
+texture = ExtResource("4_2nisw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yw5av"]
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "isGoal"
+custom_data_layer_1/type = 1
+sources/0 = SubResource("TileSetAtlasSource_3ob0h")
+sources/1 = SubResource("TileSetAtlasSource_6vipx")
+sources/2 = SubResource("TileSetAtlasSource_o2lkg")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrwbv"]
+texture = ExtResource("4_2nisw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+6:5/0 = 0
+5:5/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+4:6/0 = 0
+3:6/0 = 0
+2:6/0 = 0
+1:6/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+3:7/0 = 0
+2:7/0 = 0
+1:7/0 = 0
+0:7/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:9/0 = 0
+8:9/0 = 0
+7:9/0 = 0
+6:9/0 = 0
+5:9/0 = 0
+4:9/0 = 0
+2:8/0 = 0
+1:8/0 = 0
+3:9/0 = 0
+2:9/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+2:10/0 = 0
+8:3/0 = 0
+11:3/0 = 0
+9:1/0 = 0
+8:2/0 = 0
+7:3/0 = 0
+7:2/0 = 0
+6:2/0 = 0
+7:1/0 = 0
+6:1/0 = 0
+6:3/0 = 0
+3:4/size_in_atlas = Vector2i(2, 2)
+3:4/0 = 0
+1:3/size_in_atlas = Vector2i(2, 3)
+1:3/0 = 0
+7:4/size_in_atlas = Vector2i(2, 2)
+7:4/0 = 0
+9:2/size_in_atlas = Vector2i(2, 3)
+9:2/0 = 0
+9:5/size_in_atlas = Vector2i(2, 3)
+9:5/0 = 0
+7:6/size_in_atlas = Vector2i(2, 2)
+7:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_i8403"]
+sources/0 = SubResource("TileSetAtlasSource_jrwbv")
+
+[node name="Level5" type="Node2D"]
+script = ExtResource("1_34xwt")
+level_number = 5
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAABAAQAAQABAAYAAAACAAMAAQABAAYAAAACAAQAAQABAAYAAAADAAQAAQABAAYAAAADAAMAAQABAAYAAAABAAMAAQABAAYAAAACAAIAAQABAAYAAAACAAEAAQAHAAQAAAADAAEAAQABAAYAAAADAAIAAQABAAYAAAABAAUAAQABAAYAAAACAAUAAQAEAAEAAAADAAUAAQABAAYAAAD//wMAAQABAAYAAAD//wIAAQABAAYAAAD//wEAAQABAAYAAAD//wAAAQABAAYAAAAAAAAAAQABAAYAAAABAAAAAQABAAYAAAACAAAAAQABAAYAAAADAAAAAQABAAYAAAABAAIAAQABAAYAAAABAAEAAQAFAAQAAAAAAAEAAQABAAYAAAAAAAIAAQABAAYAAAD//wQAAQABAAYAAAD//wUAAQABAAYAAAD+/wQAAQABAAYAAAD+/wUAAQABAAYAAAD+/wYAAQABAAcAAAD9/wYAAQABAAcAAAD9/wcAAQADAAUAAAD+/wcAAQADAAUAAAD//wcAAQADAAUAAAAAAAcAAQADAAUAAAD//wYAAQABAAcAAAABAAYAAQABAAcAAAACAAYAAQABAAcAAAADAAYAAQABAAcAAAABAAcAAQADAAUAAAACAAcAAQADAAUAAAADAAcAAQADAAUAAAAEAAcAAQADAAUAAAAFAAcAAQADAAUAAAAFAAYAAQACAAcAAAAFAAUAAQACAAYAAAAFAAQAAQACAAYAAAAFAAMAAQACAAYAAAAFAAIAAQACAAYAAAAFAAEAAQACAAYAAAAFAAAAAQACAAYAAAAFAP//AQACAAYAAAAEAP//AQABAAYAAAAEAAAAAQABAAYAAAAEAAEAAQABAAYAAAAEAAIAAQABAAYAAAAEAAMAAQABAAYAAAAEAAQAAQABAAYAAAAEAAUAAQABAAYAAAAEAAYAAQABAAcAAAADAP//AQABAAYAAAACAP//AQAFAAcAAAABAP//AQABAAUAAAAAAP//AQABAAUAAAD/////AQABAAUAAAD+////AQABAAUAAAD9////AQAAAAUAAAD9/wAAAQAAAAYAAAD9/wEAAQAAAAYAAAD9/wIAAQAAAAYAAAD9/wMAAQAFAAcAAAD9/wQAAQABAAYAAAD9/wUAAQABAAYAAAD+/wMAAQABAAYAAAD+/wIAAQABAAYAAAD+/wEAAQABAAYAAAD+/wAAAQABAAYAAAD8//7/AQADAAUAAAD8////AQADAAUAAAD8/wAAAQADAAUAAAD8/wEAAQADAAUAAAD8/wIAAQADAAUAAAD8/wMAAQAAAAUAAAD8/wQAAQAAAAYAAAD8/wUAAQAAAAYAAAD8/wYAAQAAAAcAAAD8/wcAAQADAAUAAAD8/wgAAQADAAUAAAD9/wgAAQADAAUAAAD+/wgAAQADAAUAAAD//wgAAQADAAUAAAAAAAgAAQADAAUAAAABAAgAAQADAAUAAAACAAgAAQADAAUAAAADAAgAAQADAAUAAAAEAAgAAQADAAUAAAAFAAgAAQADAAUAAAAGAAgAAQADAAUAAAAGAAcAAQADAAUAAAAGAAYAAQADAAUAAAAGAAUAAQADAAUAAAAGAAQAAQADAAUAAAAGAAMAAQADAAUAAAAGAAIAAQADAAUAAAAGAAEAAQADAAUAAAAGAAAAAQADAAUAAAAGAP//AQADAAUAAAAGAP7/AQADAAUAAAAFAP7/AQACAAUAAAAEAP7/AQABAAUAAAADAP7/AQABAAUAAAACAP7/AQAAAAUAAAABAP7/AQADAAUAAAAAAP7/AQADAAUAAAD///7/AQADAAUAAAD+//7/AQADAAUAAAD9//7/AQADAAUAAAAAAAYAAQABAAcAAAAAAAUAAQABAAYAAAAAAAQAAQABAAYAAAAAAAMAAQABAAYAAAA=")
+tile_set = SubResource("TileSet_yw5av")
+
+[node name="Player" parent="." instance=ExtResource("5_qa8ae")]
+
+[node name="Tortoise" parent="." instance=ExtResource("6_g15r5")]
+position = Vector2(0, 16)
+
+[node name="Apple" parent="." instance=ExtResource("7_rlyom")]
+position = Vector2(-24, 56)
+
+[node name="Apple2" parent="." instance=ExtResource("7_rlyom")]
+position = Vector2(8, 56)
+
+[node name="Apple3" parent="." instance=ExtResource("7_rlyom")]
+position = Vector2(24, 8)
+
+[node name="Apple4" parent="." instance=ExtResource("7_rlyom")]
+position = Vector2(56, 88)
+
+[node name="Apple5" parent="." instance=ExtResource("7_rlyom")]
+position = Vector2(40, 56)
+
+[node name="Apple6" parent="." instance=ExtResource("7_rlyom")]
+position = Vector2(24, 40)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8/wEAAAAJAAUAAAD8//7/AAAJAAIAAAABAP3/AAABAAMAAAAFAAAAAAADAAQAAAD9/wcAAAAJAAIAAAAEAAYAAAAJAAUAAAADAAcAAAAJAAUAAAAAAAYAAAAHAAQAAAA=")
+tile_set = SubResource("TileSet_i8403")
+
+[node name="Textbox" parent="." instance=ExtResource("8_agqym")]
+visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_0djq5")]
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(24, 56)
+
+[connection signal="exit_button_pressed" from="PauseMenu" to="." method="_on_pause_menu_exit_button_pressed"]
+[connection signal="restart_button_pressed" from="PauseMenu" to="." method="_on_pause_menu_restart_button_pressed"]
+[connection signal="resume_button_pressed" from="PauseMenu" to="." method="_on_pause_menu_resume_button_pressed"]

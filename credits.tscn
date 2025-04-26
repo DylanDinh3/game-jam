@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://vs2y1x6y2ue8"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_ks043"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ks043")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.5
+offset_top = 10.0
+offset_right = 27.5
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "Credits"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 152.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+text = "All Programming and Art created by Dylan and Dustin Dinh"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 228.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+text = "Menu Theme + Levels 1-5 Theme created by Dustin Dinh"
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 96.0
+offset_right = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+text = "Levels 6-10 Theme created by Dylan Dinh"
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_button_pressed"]

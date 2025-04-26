@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://yo85lb556e0c"]
+
+[ext_resource type="Script" path="res://apple.gd" id="1_q0geh"]
+[ext_resource type="Texture2D" uid="uid://cfwqfoewhfh7h" path="res://Apple.png" id="2_lx8po"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf5or"]
+size = Vector2(16, 16)
+
+[node name="Apple" type="Node2D"]
+position = Vector2(88, 40)
+script = ExtResource("1_q0geh")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_lx8po")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://Art/Apple.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c499c97860579df11c0d94f90b8e93aa"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_kf5or")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 0)
+collide_with_areas = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

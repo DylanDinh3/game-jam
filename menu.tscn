@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp4krsdbhbop0"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_ptasm"]
+[ext_resource type="PackedScene" uid="uid://ba6oyiav808an" path="res://level_select.tscn" id="2_2a7aj"]
+[ext_resource type="PackedScene" uid="uid://dq181tpn46yi3" path="res://options.tscn" id="2_smreu"]
+[ext_resource type="PackedScene" uid="uid://vs2y1x6y2ue8" path="res://credits.tscn" id="3_etv1p"]
+[ext_resource type="Texture2D" uid="uid://6s01wbcy4nn6" path="res://The Bird and the Tortoise.png" id="5_vtta3"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ptasm")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_vtta3")
+expand_mode = 3
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://Art/The Bird and the Tortoise.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7655f1be6c83e1d25961d528417c0aa8"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 257.0
+offset_bottom = 178.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Bird and Tortoise"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+text = "Quit"
+
+[node name="LevelSelect" parent="." instance=ExtResource("2_2a7aj")]
+visible = false
+layout_mode = 1
+
+[node name="Options" parent="." instance=ExtResource("2_smreu")]
+visible = false
+layout_mode = 1
+
+[node name="Credits" parent="." instance=ExtResource("3_etv1p")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="exit_level_select" from="LevelSelect" to="." method="_on_level_select_exit_level_select"]
+[connection signal="exit_options_menu" from="Options" to="." method="_on_options_exit_options_menu"]
+[connection signal="exit_credits_menu" from="Credits" to="." method="_on_credits_exit_credits_menu"]
